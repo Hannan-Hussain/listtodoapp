@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("My To-Do List"),
+        title: const Text("My To-Do List", style: TextStyle(color: Colors.white, fontSize: 20,fontWeight: FontWeight.bold),),
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 38, 136, 210),
       ),
@@ -74,13 +74,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: _addTodo,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 22, 157, 211),
-                  ),
-                  child: const Text("Add", style: TextStyle(color: Colors.white)),
-                ),
+          ElevatedButton(
+  onPressed: _addTodo,
+  style: ElevatedButton.styleFrom(
+    backgroundColor: const Color.fromARGB(255, 22, 157, 211),
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.zero, // keeps rectangular
+    ),
+    minimumSize: const Size(100, 48), // ⬅️ width = 100px, height = 48px
+    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12), // adds spacing inside
+  ),
+  child: const Text(
+    "Add",
+    style: TextStyle(color: Colors.white),
+  ),
+),
+
+
               ],
             ),
           ),
